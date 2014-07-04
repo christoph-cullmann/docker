@@ -17,4 +17,4 @@ RUN cd /tmp && wget http://mirror.dkd.de/apache/subversion/subversion-1.8.9.tar.
 RUN cd /tmp && wget https://www.kernel.org/pub/software/scm/git/git-2.0.1.tar.xz && tar -xJf git-2.0.1.tar.xz && cd git-2.0.1 && ./configure --prefix=/usr && make -j8 && make install && cd .. && rm -rf git*
 
 # get and install gcc (with all dependencies)
-RUN cd /tmp && wget ftp://ftp.gwdg.de/pub/misc/gcc/releases/gcc-4.9.0/gcc-4.9.0.tar.bz2 && tar -xjf gcc-4.9.0.tar.bz2 && cd gcc-4.9.0 && ./contrib/download_prerequisites && mkdir build && cd build && ../configure --prefix=/usr --disable-multilib --enable-languages=c,c++ && make -j8 && make install-strip && cd .. && rm -rf gcc*
+RUN cd /tmp && wget ftp://ftp.gwdg.de/pub/misc/gcc/releases/gcc-4.9.0/gcc-4.9.0.tar.bz2 && tar -xjf gcc-4.9.0.tar.bz2 && cd gcc-4.9.0 && ./contrib/download_prerequisites && mkdir build && cd build && ../configure --prefix=/usr --disable-multilib --enable-languages=c,c++ && make -j8 && make install-strip && cd ../.. && rm -rf gcc*
